@@ -1,7 +1,7 @@
 <?php include("../header.php"); ?>
     <div class="container mt-3">
         <h1>Cadastro de Produto</h1>
-        <form method="post" action="image_upload.php" enctype="multipart/form-data">
+        <form method="post" action="../dao/produto_create.php" enctype="multipart/form-data">
             <input  type="hidden" name="MAX_FILE_SIZE" value="200000" />
 
             <div class="form-group">
@@ -10,13 +10,13 @@
             </div>
 
             <div class="form-group">
-                <label>Valor</label>
-                <input type="text" name="valor" class="form-control" />
+                <label>Descrição</label>
+                <input type="text" name="descricao" class="form-control" />
             </div>
 
             <div class="form-group">
-                <label>Descrição</label>
-                <input type="text" name="descricao" class="form-control" />
+                <label>Valor</label>
+                <input type="text" name="valor" class="form-control" />
             </div>
 
             <div class="form-group">

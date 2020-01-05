@@ -1,9 +1,40 @@
-<?php include("header.php") ?>
-<div class="container">
-    <div class="col-sx-12 col-sm-6 col-md-4 col-lg-4 bg-warning mt-3">
-        <a href="produto/index.php" style="height: 300px; display: inline-block; width: 100%; text-align: center;" >
-            <img src="image/produtos.png" style="heigt: 300px; width: 100%;" />
-        </a>
-    <div>
-</div>
-<?php include("footer.php") ?>
+<?php 
+    require "app/core/Core.php";
+    require "vendor/autoload.php";
+    include "app/layouts/header.php";
+
+    $core = new Core;
+    $core->run();
+
+    ?>
+    <div class="contaier">
+        <div class="row mt-3">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <tbody class="theader-light">
+                        <tr>
+                            <td>Controller:</td>
+                            <td><?=$core->getController()?></td>
+                        </tr>
+                        <tr>
+                            <td>Action:</td>
+                            <td><?=$core->getAction() ?></td>
+                        </tr>                
+                        <tr>
+                            <td>Params:</td>
+                            <td>
+                                <?php 
+                                $list = $core->getParams();
+                                foreach ($list as $l) {
+                                    echo $l . " ";
+                                }
+                                ?>
+                            </td>
+                        </tr>                                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <?php include "app/layouts/footer.php"; ?>
