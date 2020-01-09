@@ -1,20 +1,15 @@
 <?php 
     namespace app\controllers;
+    use app\core\Controller;
 
-    class ProdutoController {
+    class ProdutoController extends Controller {
+
+        public function index(){
+            echo "<div class='alert alert-success'>Invocando o método Index</div>";
+        }
+
         public function novo(){
-            echo "<div class='alert alert-success'>Invocando o método Novo</div>";
+            $this->load("create","produto");
         }
 
-        public function alterar(){
-            echo "<div class='alert alert-success'>Invocando o método Alterar</div>";
-        }
-
-        public function excluir(){
-            echo "<div class='alert alert-success'>Invocando o método Excluir</div>";
-        }
-
-        public function listar(){
-            echo "<div class='alert alert-success'>Invocando o método Listar</div>";
-        }
     }

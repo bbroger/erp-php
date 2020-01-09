@@ -38,21 +38,29 @@
                 }
 
             } else {
-                $this->setController("IndexController");
+                $this->setController($this->buildController(CONTROLLER_DEFAULT));
             }
         }
 
         private function buildController($name){
-            return "app\\controllers\\" . ucfirst($name) . "Controller";
+            return NAMESPACE_DEFAULT . ucfirst($name) . "Controller";
         }
 
         // Getters
         public function getController(){
-            return $this->controller;
+            if(class_exists($this->controller)){
+                return $this->controller;
+            }
+            return $this->buildController(CONTROLLER_DEFAULT);
         }
 
         public function getAction(){
-            return $this->action;
+            
+            if(method_exists($this->controller, $this->action)){
+                return $this->action;
+            }
+
+            return ACTION_DEFAULT;
         }
 
         public function getParams(){

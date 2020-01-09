@@ -1,8 +1,9 @@
 <?php 
     namespace app\controllers;
+    use app\core\Controller;
 
-    class HomeController {
+    class HomeController extends Controller {
         public function index(){
-            echo "</h1>Bem vindo!</h1>";
+            $this->load("index", "home");
         }
     }
