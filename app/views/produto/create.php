@@ -26,5 +26,5 @@
         <button type="submit" class="btn btn-success float-right">Salvar</button>
     </form>
 
-    <a href="index.php" class="btn btn-outline-dark">Voltar</a>
+    <a href="/index" class="btn btn-outline-dark">Voltar</a>
 </div>
