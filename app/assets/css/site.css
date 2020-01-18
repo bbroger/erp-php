@@ -1,0 +1,10 @@
+.vertical-menu{
+    min-height: 700px;
+    width: 150px;
+}
+
+.list-group-item {    
+    border-radius: 0 !important;
+    padding: 20px;
+    width: 150px;
+}
